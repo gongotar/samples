@@ -13,6 +13,8 @@ from functools import reduce
 def ncr(n, r):
     if (r < 0):
         return 0
+    if (r > n):
+        return 0
     r = min(r, n-r)
     numer = reduce(op.mul, range(n, n-r, -1), 1)
     denom = reduce(op.mul, range(1, r+1), 1)
